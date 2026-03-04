@@ -4,5 +4,5 @@ export enum ApplicationStatus {
   OnSite = 'On Site',        
   Rejected = 'Rejected',
   Offer = 'Offer',
-  Saved = 'Saved'
+  Bookmarked = 'Bookmarked'
 }
