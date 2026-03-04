@@ -1,19 +1,20 @@
-import {createStore} from 'tinybase';
-import { ApplicationStatus } from '../types/applicationStatus';
+import {createStore} from "tinybase"
 
-export const JOBS_TABLE = 'jobs';
+import {ApplicationStatus} from "../types/applicationStatus"
 
-const store = createStore().setTablesSchema({
-  JOBS_TABLE: {
-    id: {type: 'string'},
-    company: {type: 'string'},
-    title: {type: 'string'},
-    status: {type: 'string', default: ApplicationStatus.Saved},
-    rejectionReason: {type:'string'},
-    dateApplied: { type:'string'},
-    url: { type: 'string' },
-    isSynced: { type: 'boolean', default: false },
-    isWarm: { type: 'boolean', default: false }
+export const JOBS_TABLE = "jobs"
 
-  },
-});
+export const store = createStore().setTablesSchema({
+  [JOBS_TABLE]: {
+    id: {type: "string", default: ""},
+    company: {type: "string", default: ""},
+    title: {type: "string", default: ""},
+    status: {type: "string", default: ApplicationStatus.Saved},
+    rejectionReason: {type: "string", default: ""},
+    dateApplied: {type: "string", default: ""},
+    dateSaved: {type: "string", default: ""},
+    url: {type: "string", default: ""},
+    isSynced: {type: "boolean", default: false},
+    isWarm: {type: "boolean", default: false}
+  }
+})
